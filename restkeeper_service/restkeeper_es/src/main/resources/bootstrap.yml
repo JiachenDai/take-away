@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: es-dubbo-provider
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        sharedDataids: common.yaml
+        refreshable-dataids: common.yaml
+management:
+    health:
+      elasticsearch:
+        enabled: false

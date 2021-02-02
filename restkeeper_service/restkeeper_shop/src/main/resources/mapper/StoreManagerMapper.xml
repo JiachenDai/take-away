@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.restkeeper.shop.mapper.StoreManagerMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.restkeeper.shop.entity.StoreManager">
+        <id column="store_manager_id" property="storeManagerId" />
+        <result column="store_manager_name" property="storeManagerName"/>
+        <result column="store_manager_phone" property="storeManagerPhone"/>
+        <result column="shop_id" property="shopId"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="last_update_time" property="lastUpdateTime"/>
+        <collection property="stores" column="store_manager_id" select="com.restkeeper.shop.mapper.StoreMapper.selectStoreInfoByManagerId"></collection>
+    </resultMap>
+
+</mapper>

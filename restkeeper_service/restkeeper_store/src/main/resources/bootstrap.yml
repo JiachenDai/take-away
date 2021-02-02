@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: store-dubbo-provider
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        shared-dataids: common.yaml
+        refreshable-dataids: common.yaml
